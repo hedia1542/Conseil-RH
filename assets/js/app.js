@@ -199,7 +199,8 @@
       '<div class="section-title"><h2>Vidéos ESMC</h2></div>' +
       '<p style="color:var(--ink-2)">Espace réservé aux vidéos d’ESMC Business School.</p>' +
       '<div class="grid grid-3">' + D.videos.map(function (v) {
-        return '<article class="card video-card"><div class="video-frame">' + videoEmbed(v) + '</div>' +
+        var vertical = /youtube\.com\/shorts\//.test(v.url || "");
+        return '<article class="card video-card"><div class="video-frame' + (vertical ? " vertical" : "") + '">' + videoEmbed(v) + '</div>' +
           '<div class="video-body"><h3>' + esc(v.titre) + "</h3><p>" + esc(v.description) + "</p></div></article>";
       }).join("") + "</div></div></section>";
   }

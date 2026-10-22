@@ -48,10 +48,11 @@ window.ESMC_DATA = {
   /*
    * Vidéos : collez une URL YouTube (https://www.youtube.com/watch?v=…),
    * Vimeo, ou le chemin d'un fichier MP4 placé dans assets/videos/.
+ * Les YouTube Shorts s'affichent automatiquement au format vertical.
    * Laissez `url` vide pour afficher un emplacement réservé.
    */
   videos: [
-    { titre: "Présentation d’ESMC Business School", description: "Emplacement réservé à une vidéo de présentation fournie par ESMC.", url: "" },
+    { titre: "Présentation d’ESMC Business School", description: "Découvrez ESMC Business School en vidéo.", url: "https://youtube.com/shorts/TJijhUEomRg" },
     { titre: "Bien démarrer sa recherche d’alternance", description: "Emplacement réservé à une vidéo conseil (ex. : intervention d’un·e chargé·e de relations entreprises).", url: "" },
     { titre: "Créer du contenu avec l’IA", description: "Emplacement réservé à un tutoriel vidéo ESMC.", url: "" }
   ],
