@@ -7,6 +7,9 @@
  * par l'équipe ESMC. Les exemples sont fictifs.
  */
 window.ESMC_DATA = {
+  // Adresse publique du site (sert au plan du site pour Google). À changer en cas de domaine personnalisé.
+  siteUrl: "https://hedia1542.github.io/Conseil-RH/",
+
   espaces: {
     alternance: {
       titre: "Trouver mon alternance",
@@ -45,19 +48,29 @@ window.ESMC_DATA = {
     tutoriel: "Tutoriel"
   },
 
-  /*
-   * Vidéos : collez une URL YouTube (https://www.youtube.com/watch?v=…),
-   * Vimeo, ou le chemin d'un fichier MP4 placé dans assets/videos/.
- * Les YouTube Shorts s'affichent automatiquement au format vertical.
-   * Laissez `url` vide pour afficher un emplacement réservé.
-   */
-  // Lien vers la chaîne YouTube ESMC (bouton « Voir toutes nos vidéos »)
-  chaineYoutube: "https://www.youtube.com/@esmcbusinessshoolosny",
+  // Lien vers la chaîne YouTube ESMC
+  chaineYoutube: "https://www.youtube.com/@ESMCBUSINESSSHOOLOSNY",
 
+  /*
+   * Vidéos : collez une URL YouTube (https://www.youtube.com/watch?v=… ou /shorts/…),
+   * Vimeo, ou le chemin d'un fichier MP4 placé dans assets/videos/.
+   * Les YouTube Shorts s'affichent automatiquement au format vertical.
+   * Les 4 premières vidéos apparaissent sur la page d'accueil ; toutes sont sur la page « Vidéos ».
+   * Pour le référencement, donnez à chaque vidéo un titre et une courte description.
+   */
   videos: [
-    { titre: "Présentation d’ESMC Business School", description: "Découvrez ESMC Business School en vidéo.", url: "https://youtube.com/shorts/TJijhUEomRg" },
-    { titre: "Bien démarrer sa recherche d’alternance", description: "Emplacement réservé à une vidéo conseil (ex. : intervention d’un·e chargé·e de relations entreprises).", url: "" },
-    { titre: "Créer du contenu avec l’IA", description: "Emplacement réservé à un tutoriel vidéo ESMC.", url: "" }
+    { titre: "Présentation d’ESMC Business School", description: "Découvrez ESMC Business School en vidéo.", url: "https://www.youtube.com/shorts/TJijhUEomRg" },
+    { titre: "ESMC en vidéo — n°2", description: "", url: "https://www.youtube.com/shorts/IHSstxmg6_4" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°3", description: "", url: "https://www.youtube.com/shorts/hoZ5psemwd8" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°4", description: "", url: "https://www.youtube.com/shorts/-QEkxzYBZ1A" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°5", description: "", url: "https://www.youtube.com/shorts/dVPu_5R7twE" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°6", description: "", url: "https://www.youtube.com/shorts/dfeGI3EOByY" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°7", description: "", url: "https://www.youtube.com/shorts/p_lgPjUELBM" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°8", description: "", url: "https://www.youtube.com/shorts/zfCNMKlWIqw" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°9", description: "", url: "https://www.youtube.com/shorts/d9QOKSFeGyA" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°10", description: "", url: "https://www.youtube.com/shorts/1tbyYZbcnew" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°11", description: "", url: "https://www.youtube.com/shorts/yZlNUKke6LE" }, // titre à compléter
+    { titre: "ESMC en vidéo — n°12", description: "", url: "https://www.youtube.com/shorts/DHEb0bQJECA" }, // titre à compléter
   ],
 
   ressources: [

@@ -13,14 +13,33 @@ Recherche par mot-clé et filtres par espace, filière, thème et type de ressou
 ## Structure
 
 ```
-index.html               Page unique (en-tête, navigation, pied de page)
+assets/js/data.js        CONTENUS : espaces, filières, vidéos, fiches (le seul fichier à modifier)
+assets/js/render.js      Mise en page des contenus (partagée par le générateur et le navigateur)
+assets/js/app.js         Interactions : filtres, copie, checklists, lecture des vidéos
 assets/css/style.css     Mise en forme (mobile d’abord, mode sombre automatique)
-assets/js/data.js        CONTENUS : espaces, filières, vidéos, fiches
-assets/js/app.js         Fonctionnement : navigation, recherche, filtres, copie
-assets/img/logo-esmc.jpg Logo ESMC (en-tête et accueil)
-assets/img/favicon.png    Icône d’onglet / écran d’accueil
-assets/videos/           Dossier pour d’éventuelles vidéos MP4
+assets/img/              Logo ESMC et icône
+scripts/build.js         Générateur des pages HTML
+index.html, fiche/…, filiere/…, alternance/, filieres/, ia/, fiches/, videos/, 404.html
+                         Pages GÉNÉRÉES (ne pas modifier à la main)
+sitemap.xml, robots.txt  Plan du site pour Google (générés)
 ```
+
+### Après chaque modification de `data.js`
+
+```bash
+node scripts/build.js
+```
+
+Le générateur (Node.js, sans dépendance) réécrit toutes les pages. Chaque fiche a sa propre adresse
+(ex. `fiche/cv-alternance/`), avec un titre et une description lisibles par Google.
+
+## Référencement (Google)
+
+- Chaque page contient son texte complet dans le HTML, un titre, une description et une adresse canonique.
+- `sitemap.xml` liste toutes les pages. Déclarez-le dans [Google Search Console](https://search.google.com/search-console)
+  (ajouter la propriété avec l’adresse du site, puis « Sitemaps » → `sitemap.xml`).
+- `robots.txt` n’est pris en compte par Google qu’à la racine d’un domaine : il deviendra utile avec un domaine personnalisé.
+- En cas de domaine personnalisé, changez `siteUrl` en haut de `data.js` puis relancez le générateur.
 
 ## Voir le site depuis votre téléphone
 
@@ -40,6 +59,7 @@ Téléchargez le dépôt (bouton **Code → Download ZIP**), décompressez-le, p
 ### Option 3 — Sur votre ordinateur (même Wi-Fi que le téléphone)
 
 ```bash
+node scripts/build.js
 python3 -m http.server 8000
 ```
 
@@ -51,7 +71,7 @@ Puis, sur le téléphone, ouvrez `http://ADRESSE-IP-DE-L-ORDINATEUR:8000`.
 Le logo officiel est dans `assets/img/logo-esmc.jpg`. Pour le changer, remplacez ce fichier en gardant le même nom (et `favicon.png` pour l’icône).
 
 ### Couleurs
-Les couleurs reprennent le logo (bleu marine `#0a1944`, orange `#e77b3a`). Pour les ajuster, modifiez `--brand`, `--brand-2` et `--accent` en haut de `assets/css/style.css` selon la charte ESMC (et la ligne `theme-color` dans `index.html`).
+Les couleurs reprennent le logo (bleu marine `#0a1944`, orange `#e77b3a`). Pour les ajuster, modifiez `--brand`, `--brand-2` et `--accent` en haut de `assets/css/style.css` selon la charte ESMC (et la ligne `theme-color` dans `scripts/build.js`).
 
 ### Vidéos
 Dans `assets/js/data.js`, section `videos`, renseignez `url` avec :
@@ -59,7 +79,8 @@ Dans `assets/js/data.js`, section `videos`, renseignez `url` avec :
 - un lien Vimeo,
 - ou un fichier placé dans `assets/videos/` (ex. `assets/videos/presentation.mp4`).
 
-Tant que `url` est vide, un emplacement réservé s’affiche.
+Tant que `url` est vide, un emplacement réservé s’affiche. Les 4 premières vidéos apparaissent sur l’accueil, toutes sur la page `videos/`.
+Les vidéos YouTube ne se chargent qu’au clic (page plus rapide). Pour le référencement, donnez à chaque vidéo un vrai titre et une description.
 
 ### Ajouter une fiche
 Dans `assets/js/data.js`, copiez un bloc `{ … }` du tableau `ressources` et adaptez-le :
@@ -75,7 +96,7 @@ Dans `assets/js/data.js`, copiez un bloc `{ … }` du tableau `ressources` et ad
 | `objectif`, `etapes`, `exemple` | **obligatoires** : objectif, étapes simples, exemple concret |
 | `checklist`, `modeles`, `prompts`, `vigilance` | facultatifs |
 
-Pour une nouvelle filière, ajoutez une entrée dans `filieres` (en haut du fichier).
+Pour une nouvelle filière, ajoutez une entrée dans `filieres` (en haut du fichier). Relancez ensuite `node scripts/build.js`.
 
 ### Retirer la mention « Proposition à valider »
-Une fois les contenus validés, la mention se trouve dans `assets/js/app.js` (fonctions `badges` et `viewFiche`) et dans `index.html` (pied de page).
+Une fois les contenus validés, la mention se trouve dans `assets/js/render.js` (fonctions `badges` et `pageFiche`) et dans `scripts/build.js` (pied de page).
