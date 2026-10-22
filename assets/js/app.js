@@ -202,7 +202,9 @@
         var vertical = /youtube\.com\/shorts\//.test(v.url || "");
         return '<article class="card video-card"><div class="video-frame' + (vertical ? " vertical" : "") + '">' + videoEmbed(v) + '</div>' +
           '<div class="video-body"><h3>' + esc(v.titre) + "</h3><p>" + esc(v.description) + "</p></div></article>";
-      }).join("") + "</div></div></section>";
+      }).join("") + "</div>" +
+      (D.chaineYoutube ? '<p style="margin-top:16px"><a class="btn" href="' + esc(D.chaineYoutube) + '" target="_blank" rel="noopener">' + ICONS.play + "Voir toutes nos vidéos sur YouTube</a></p>" : "") +
+      "</div></section>";
   }
 
   /* ---------- Vues ---------- */
