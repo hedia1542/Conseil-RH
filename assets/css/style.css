@@ -1,10 +1,10 @@
 /* ESMC — Conseils & outils carrière
- * Couleurs provisoires : remplacez --brand / --accent par la charte ESMC. */
+ * Couleurs reprises du logo ESMC (bleu marine et orange). */
 :root {
-  --brand: #13295b;
-  --brand-2: #1f4ba8;
-  --accent: #f2b134;
-  --accent-ink: #3a2700;
+  --brand: #0a1944;
+  --brand-2: #1c3a8c;
+  --accent: #e77b3a;
+  --accent-ink: #1f0e00;
 
   --bg: #f5f7fb;
   --surface: #ffffff;
@@ -96,7 +96,7 @@ main { outline: none; min-height: 60vh; }
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
 .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; min-width: 0; }
-.brand-logo { width: 40px; height: 40px; border-radius: 10px; flex: none; object-fit: contain; background: #fff1; }
+.brand-logo { width: 48px; height: 45px; border-radius: 6px; flex: none; object-fit: contain; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
 .brand-text strong { font-size: 1.05rem; letter-spacing: .06em; }
 .brand-text span { font-size: .8rem; opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -141,6 +141,8 @@ main { outline: none; min-height: 60vh; }
   padding: 32px 0 40px;
 }
 .hero .eyebrow { color: var(--accent); }
+.hero-logo { display: block; width: 104px; height: auto; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 0 0 1px #ffffff1f; }
+@media (min-width: 760px) { .hero-logo { width: 132px; } }
 .hero p.lead { font-size: 1.05rem; opacity: .92; max-width: 620px; }
 .eyebrow { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; color: var(--brand-ink); }
 .hero-search { display: flex; gap: 8px; margin-top: 20px; max-width: 620px; }

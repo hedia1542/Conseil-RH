@@ -224,6 +224,7 @@
     document.title = SITE;
     app.innerHTML =
       '<section class="hero"><div class="container">' +
+        '<img class="hero-logo" src="assets/img/logo-esmc.jpg" alt="" width="132" height="123">' +
         '<span class="eyebrow">ESMC Business School</span>' +
         "<h1>Conseils &amp; outils carrière</h1>" +
         '<p class="lead">Des méthodes simples, des modèles à copier et des fiches pratiques pour préparer votre recherche d’alternance et développer des compétences utiles en entreprise.</p>' +

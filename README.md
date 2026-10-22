@@ -17,7 +17,8 @@ index.html               Page unique (en-tête, navigation, pied de page)
 assets/css/style.css     Mise en forme (mobile d’abord, mode sombre automatique)
 assets/js/data.js        CONTENUS : espaces, filières, vidéos, fiches
 assets/js/app.js         Fonctionnement : navigation, recherche, filtres, copie
-assets/img/logo-esmc.svg Logo PROVISOIRE à remplacer
+assets/img/logo-esmc.jpg Logo ESMC (en-tête et accueil)
+assets/img/favicon.png    Icône d’onglet / écran d’accueil
 assets/videos/           Dossier pour d’éventuelles vidéos MP4
 ```
 
@@ -47,10 +48,10 @@ Puis, sur le téléphone, ouvrez `http://ADRESSE-IP-DE-L-ORDINATEUR:8000`.
 ## Personnaliser
 
 ### Logo
-Remplacez `assets/img/logo-esmc.svg` par le logo officiel (même nom de fichier). Pour un PNG, déposez `assets/img/logo-esmc.png` et modifiez les deux mentions de `logo-esmc.svg` dans `index.html`.
+Le logo officiel est dans `assets/img/logo-esmc.jpg`. Pour le changer, remplacez ce fichier en gardant le même nom (et `favicon.png` pour l’icône).
 
 ### Couleurs
-Les couleurs sont provisoires. Modifiez `--brand`, `--brand-2` et `--accent` en haut de `assets/css/style.css` selon la charte ESMC (et la ligne `theme-color` dans `index.html`).
+Les couleurs reprennent le logo (bleu marine `#0a1944`, orange `#e77b3a`). Pour les ajuster, modifiez `--brand`, `--brand-2` et `--accent` en haut de `assets/css/style.css` selon la charte ESMC (et la ligne `theme-color` dans `index.html`).
 
 ### Vidéos
 Dans `assets/js/data.js`, section `videos`, renseignez `url` avec :
